@@ -23,13 +23,21 @@
         }
 
         .hero{
-            background-color: #ccc;
+            background-color: #656e61;
             background-image: url('Offices.jpg');
         }
         .logo-container{
             display: flex;
             justify-content: center;
             margin: 30px;
+        }
+
+        .centered-logo{
+            width: 200px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .img{

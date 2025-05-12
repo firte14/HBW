@@ -14,6 +14,26 @@ function myFunction() {
     }
   }
 
+function filterJobs() {
+    const input = document.getElementById("jobSearch").value.toLowerCase();
+    const jobs = document.querySelectorAll(".job");
+    let found = false;
+
+    jobs.forEach(job => {
+        const title = job.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(input)) {
+            job.style.display = "block";
+            found = true;
+        } else {
+            job.style.display = "none";
+        }
+    });
+
+    document.getElementById("noResultsMessage").style.display = found ? "none" : "block";
+}
+
+
+
 function toggleThoughts(thoughtsId) {
     const thoughtsElement = document.getElementById(thoughtsId);
     if (thoughtsElement.style.display === "none") {
@@ -33,20 +53,19 @@ function toggleThoughts(thoughtsId) {
   }
 
   document.getElementById('applicationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
-    // Here you can handle the form data as needed
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const resume = document.getElementById('resume').files[0];
     const coverLetter = document.getElementById('coverLetter').value;
-
-    // For demonstration, we'll just show a success message
+    
     const responseMessage = document.getElementById('responseMessage');
     responseMessage.textContent = `Thank you, ${name}! Your application has been submitted successfully.`;
-    responseMessage.style.color = 'green'; // Change text color to green
+    responseMessage.style.color = 'green'; 
 
-    // Optionally, you can reset the form after submission
+
     document.getElementById('applicationForm').reset();
 });

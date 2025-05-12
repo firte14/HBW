@@ -22,9 +22,12 @@
             </ul>
         </nav>
     </header>
+
     <div class="search-bar">
-        <input type="text" placeholder="Search">
+        <input type="text" id="jobSearch" placeholder="Search for a job role..." onkeyup="filterJobs()">
     </div>
+    <p id="noResultsMessage" style="display:none; color:red;">No matching job roles found.</p> 
+
     <script type="text/javascript" src="script.js"></script>
     <section id="job-list">
         <h2>Available Web Developer Roles</h2>
